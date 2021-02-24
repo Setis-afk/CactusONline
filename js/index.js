@@ -60,33 +60,3 @@ initializeClock('countdown', deadline);
 
 
 //Swiper
-
-
-document.querySelectorAll('.services__swiper-container').forEach(function (elem) {
-	new Swiper(elem, {
-		slidesPerView: 1,
-		loop: true,
-		autoplay: {
-			delay: 5000,
-		},
-		spaceBetween: 10,
-		navigation: {
-			nextEl: elem.nextElementSibling.nextElementSibling,
-			prevEl: elem.nextElementSibling,
-		},
-		breakpoints: {
-			525: {
-				slidesPerView: 1,
-				spaceBetween: 20,
-			},
-			767: {
-				slidesPerView: 2,
-				spaceBetween: 30,
-			},
-			991: {
-				slidesPerView: 3,
-				spaceBetween: 30,
-			},
-		}
-	});
-});
