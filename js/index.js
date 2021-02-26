@@ -63,7 +63,7 @@ initializeClock('countdown', deadline);
 
 
 let app = document.getElementById('app');
-let scrollAmount = document.body.clientWidth*1/3;
+let scrollAmount = document.body.clientWidth*1/5;
 let rows = document.querySelectorAll('.row');
 document.querySelector('.slide-right').addEventListener('click', (e) => {
     let currentPage = parseInt(app.getAttribute('data-page'));
@@ -76,7 +76,7 @@ document.querySelector('.slide-right').addEventListener('click', (e) => {
 document.querySelector('.slide-left').addEventListener('click', (e) => {
     let currentPage = parseInt(app.getAttribute('data-page'));
     let targetPixel = (currentPage-1) * scrollAmount;
-    if(currentPage == 0) return;
+    if(currentPage === 0) return;
     for(let i = 0; i < rows.length; i++) {
         rows[i].style.transform = "rotate3d(-1,.5,0,-10deg) translateX(-"+targetPixel+"px)"
     }
@@ -87,4 +87,10 @@ document.body.addEventListener('mousemove', (e) => {
         x: e.clientX,
         y: e.clientY,
     }
+})
+//burger
+document.querySelector('.nav-burger').addEventListener('click', function () {
+	document.querySelector('.nav-burger span').classList.toggle('active');
+	document.querySelector('.nav-burger').classList.toggle('active');
+    document.querySelector('.other-nav, .menu-list').classList.toggle('active');
 })
