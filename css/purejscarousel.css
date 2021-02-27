@@ -1,3 +1,9 @@
+:root {
+     --main-color:rgb(51, 51, 51);
+     --accent-color: rgb(123, 181, 124);
+     --additional-color: white;
+}
+
 .purejscarousel {
   overflow: hidden;
 }
@@ -30,23 +36,29 @@
 }
 
 .purejscarousel-btn-next {
-  border-bottom: 8px solid #aaa;
-  border-right: 8px solid #aaa;
+  border-bottom: 8px solid var(--accent-color);
+  border-right: 8px solid var(--accent-color);
   right: 5px;
   -moz-transform: rotate(315deg);
   -webkit-transform: rotate(315deg);
   transform: rotate(315deg);
+  transition: border-color 0.3s linear;
 }
-
+.purejscarousel-btn-next:hover{
+    border-color: var(--main-color);
+}
 .purejscarousel-btn-prev {
-  border-bottom: 8px solid #aaa;
-  border-left: 8px solid #aaa;
+  border-bottom: 8px solid var(--accent-color);
+  border-left: 8px solid var(--accent-color);
   left: 5px;
   -moz-transform: rotate(45deg);
   -webkit-transform: rotate(45deg);
   transform: rotate(45deg);
+  transition: border-color 0.3s linear;
 }
-
+.purejscarousel-btn-prev:hover{
+    border-color: var(--main-color);
+}
 .purejscarousel-dots-container {
   float: left;
   margin-top: 15px;
@@ -55,7 +67,7 @@
 }
 
 .purejscarousel-dot {
-  background: #aaa;
+  background: rgb(123, 181, 124);
   border: 0;
   border-radius: 50%;
   box-shadow: none;
@@ -68,5 +80,5 @@
 
 .active.purejscarousel-dot {
   cursor: default;
-  opacity: .5;
+  background: var(--main-color);
 }

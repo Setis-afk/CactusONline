@@ -563,3 +563,9 @@
     }
   };
 })();
+var carouselOneByOne = new PureJSCarousel({
+          carousel: '#carousel-one-by-one-infinite',
+          slide: '.slide',
+          oneByOne: true,
+          infinite: true
+        });
