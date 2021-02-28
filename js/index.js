@@ -61,9 +61,6 @@ initializeClock('countdown', deadline);
 
 //Swiper
 
-
-
-
 //burger
 document.querySelector('.nav-burger').addEventListener('click', function () {
 	document.querySelector('.nav-burger span').classList.toggle('active');
