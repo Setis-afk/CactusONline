@@ -103,12 +103,12 @@ h3{
     flex: 0.8;
     justify-content: flex-end;
 }
-.menu,.goods-button{
+.menu-item,.goods-button{
      color: var(--main-color);
      font-family:'Poppins' ;
      font-size: 1.2rem;
 }
-.menu:hover{
+.menu-item:hover{
      color: var(--accent-color);  
 }
 .language-list-type,.social-list-type{
@@ -157,8 +157,74 @@ h3{
 /*//////////////////////////Header Navigation////////////////////////////*/
 /*//////////////////////////Burger////////////////////////////*/
 .nav-burger{
-    
+    position: relative;
 }
+.inner-burger{
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  width: 50px;
+  height: 50px;
+  cursor: pointer;
+}
+.inner-burger span, .inner-burger span:before, .inner-burger span:after{
+  width: 100%;
+  position: absolute;
+  height: 10px;
+  background: #333;
+  display: block;
+  transition: .3s;
+  border-radius: 5px;
+}
+.inner-burger span:before{
+  content: "";
+  top: -20px;
+  transition: top 300ms 300ms, transform 300ms cubic-bezier(0.23, 1, 0.32, 1);
+}
+.inner-burger span{
+  top: 20px;
+}
+.inner-burger span:after{
+  content: "";
+  bottom: -20px;
+  transition: bottom 300ms 300ms, transform 300ms cubic-bezier(0.23, 1, 0.32, 1);
+}
+.inner-burger span.active:before{
+  content: "";
+  top: 0px;
+  transform: rotate(45deg);
+  transition: top 300ms, transform 300ms 300ms cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+.inner-burger span.active:after{
+  content: "";
+  bottom: 0;
+  transform: rotate(-45deg);
+  transition: bottom 300ms, transform 300ms 300ms cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+.inner-burger span.active{
+  background: rgba(255, 255, 255, 0); 
+}
+.menu{
+    z-index: 1000000;
+    width:100%;
+    padding: 20px;
+    border-bottom: 30px var(--main-color) solid;
+    background:aliceblue;
+    color: #ccc;
+    position: fixed;
+    left: -320px;
+    transition: left 500ms cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    display: none;
+}
+.menu.animate{
+  left: 0;
+  display: grid;
+    grid-template-rows: min-content min-content min-content min-content min-content;
+    grid-row-gap: 1rem;
+}
+
+
+
 /*//////////////////////////burger////////////////////////////*/
 /*////////////////////////////Header INTRO//////////////////////////////////////////*/
 .intro-page{
@@ -506,4 +572,89 @@ transition: box-shadow 0.5s, transform 0.5s;
 }
 .footer-sub:hover{
     background-color: var(--additional-color);
+}
+@media (max-width:320px){
+    .main-nav {
+         justify-content: space-between;
+    background-color: var(--additional-color);
+    }
+    .nav-burger{
+    position: relative;
+    margin-right: 10%;
+    }
+    .logo{
+     font-family: 'Pompiere', cursive;
+     font-size: 2rem;
+     margin-left: 10%;
+   } 
+   h1 {
+      font-size: 2rem;   
+   }
+   h2{
+     font-size: 2.5rem;
+     margin-top: 5%;
+   }
+   h3{
+     font-size: 1rem;
+   }
+   h4{
+       font-size: 0.7rem;
+   }
+   .intro-link{
+       height: 3rem;
+    font-size: 0.8rem;
+   }
+   .intro-page {
+    padding: 25% 0 5% 5%;
+   }
+   .countdown-number {
+    height: 60px;
+    width: 60px;
+   }  
+   .countdown-time {
+    font-size: 1rem;
+   }
+   .countdown-text {
+    
+    font-size: 0.7rem;
+   }
+   .promotions-link{
+     font-size: 0.5rem;  
+   }
+   .collections-background-section{
+       background-size: auto;
+   }
+   .collections-link{
+       height:3rem;
+   }
+   .carousel{
+       max-width: 320px;
+       max-height: 568px;
+   }
+   .clients-container{
+       grid-gap: 0.7rem;
+   }
+   .client-image{
+       width: 50px;
+   }
+   .contact-us-page{
+       display: block;
+   }
+   .form-for-customer, .contact-us{
+       width: 100%;
+   }
+   .footer-info{
+       grid-template-columns: auto;
+       grid-template-rows:  40% 30% 30%;
+   }
+   .flogo{
+       text-align: center;
+       
+   }
+   .footer-logo-text{
+       display: none;
+   }
+   .footer-nav{
+       display: none;
+   }
 }

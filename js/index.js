@@ -62,8 +62,9 @@ initializeClock('countdown', deadline);
 //Swiper
 
 //burger
-document.querySelector('.nav-burger').addEventListener('click', function () {
-	document.querySelector('.nav-burger span').classList.toggle('active');
-	document.querySelector('.nav-burger').classList.toggle('active');
-    document.querySelector('.other-nav, .menu-list').classList.toggle('active');
+document.querySelector('.inner-burger').addEventListener('click', function(){
+  document.querySelector('.inner-burger span').classList.toggle('active');
+  document.querySelector('.menu').classList.toggle("animate");
+  //$('body').addClass('stop-scrolling');
+  //$('body').bind('touchmove', function(e){e.preventDefault()});
 })
