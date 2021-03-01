@@ -54,7 +54,7 @@ function initializeClock(id, endtime) {
   let timeinterval = setInterval(updateClock, 1000);
 }
 
-let deadline="March 01 2021 00:00:00 GMT+0300"; //for Ukraine
+let deadline="April 01 2021 00:00:00 GMT+0300"; //for Ukraine
 
 initializeClock('countdown', deadline);
 
