@@ -1,5 +1,4 @@
 @import url('https://fonts.googleapis.com/css2?family=Pompiere&family=Poppins:wght@400;700;900&family=Rubik:wght@400;900&family=Ubuntu:ital,wght@0,400;1,700&display=swap');
-
 *{
     margin: 0;
     padding: 0;
@@ -15,7 +14,7 @@
 }
 body {
      margin: auto;
-     
+     max-width:1440px;
 }
 li{
     
@@ -25,10 +24,14 @@ li{
 a{
      text-decoration: none;
      color: var(--additional-color);
+     font-size: 1.3rem;
+}
+a:hover{
+    color: var(--accent-color);
 }
 
 h2{
-    font-size: 5rem;
+    font-size: 6rem;
     line-height: 1em;
     color: var(--main-color);
      font-weight: 800;
@@ -38,7 +41,7 @@ span{
 }
 h4{
     color: var(--main-color);
-    font-size: 1rem;
+    font-size: 1.5rem;
     line-height: 1em;
      font-weight: 700;
       margin-bottom: 5%;
@@ -51,9 +54,13 @@ footer{
     
 }
 h3{
+    font-size: 2.5rem;
    text-align: center;
    font-weight: 700;
     color: var(--main-color);
+}
+p{
+    font-size: 1.3rem;
 }
 /*//////////////////////////Default Selectors/////////////////////////////
 ////////////////////////////Header Navigation///////////////////////////////////////////*/
@@ -73,8 +80,10 @@ h3{
     padding: 0;
 }
 .main-nav {
+    max-width: none;
     position: fixed;
      font-weight: 500;
+     max-width: 1440px;
      width: 100%;
      margin: auto;
      background-color: transparent;
@@ -89,7 +98,7 @@ h3{
 }
 .logo{
      font-family: 'Pompiere', cursive;
-     font-size: 2.8rem;
+     font-size: 4rem;
 }
 .social-list-icon{
      height: 20px;
@@ -101,18 +110,20 @@ h3{
     flex-wrap: wrap;
     display: flex;
     flex: 0.8;
-    justify-content: flex-end;
+    justify-content: space-around;
+    padding: 0;
 }
 .menu-item,.goods-button{
      color: var(--main-color);
      font-family:'Poppins' ;
-     font-size: 1.2rem;
+    font-size: 1.5rem;
 }
 .menu-item:hover{
      color: var(--accent-color);  
 }
 .language-list-type,.social-list-type{
-     margin: auto 10px auto 10px; 
+     margin: auto 10px auto 10px;
+     font-size: 1.3rem; 
 }
 .social-list-type{
    
@@ -158,6 +169,7 @@ h3{
 /*//////////////////////////Burger////////////////////////////*/
 .nav-burger{
     position: relative;
+    display: none;
 }
 .inner-burger{
   position: absolute;
@@ -170,7 +182,7 @@ h3{
 .inner-burger span, .inner-burger span:before, .inner-burger span:after{
   width: 100%;
   position: absolute;
-  height: 10px;
+  height: 7px;
   background: #333;
   display: block;
   transition: .3s;
@@ -205,22 +217,23 @@ h3{
   background: rgba(255, 255, 255, 0); 
 }
 .menu{
-    z-index: 1000000;
+     z-index: 1000000;
     width:100%;
     padding: 20px;
     border-bottom: 30px var(--main-color) solid;
     background:aliceblue;
     color: #ccc;
     position: fixed;
-    left: -320px;
-    transition: left 500ms cubic-bezier(0.68, -0.55, 0.265, 1.55);
-    display: none;
+    top: -3200px;
+    left: 0;
+    display: grid;
+    grid-template-rows: min-content min-content min-content min-content min-content;
+    grid-row-gap: 1rem;
+    transition: top 500ms cubic-bezier(0.68, -0.55, 0.265, 1.55);
 }
 .menu.animate{
   left: 0;
-  display: grid;
-    grid-template-rows: min-content min-content min-content min-content min-content;
-    grid-row-gap: 1rem;
+  top: 80px;
 }
 
 
@@ -237,6 +250,7 @@ h3{
 .intro-subtitle{
     padding: 5% 0 5% 0;
     color: var(--additional-color);
+    font-size: 1.3rem;
 }
 
 .intro-link{
@@ -274,15 +288,15 @@ box-shadow: -5px -5px 5px -5px rgba(34, 60, 80, 0.6) inset;
 }
 
 .countdown-number {
-  height: 120px;
-  width: 120px;
+  height: 160px;
+  width: 160px;
   border: 1px solid var(--main-color);
   border-radius: 3px;
   
 }
 
 .countdown-time {
- font-size: 3.5rem;
+ font-size: 5rem;
  color: var(--main-color);
 }
 
@@ -430,7 +444,7 @@ transform: scale(1.1);
     display: grid;
     grid-template-columns: min-content min-content min-content;
     grid-gap: 2rem;
-    background-color: var(--accent-color);
+    background-color: var(--additional-color);
     padding: 10%;
     border-radius: 50%;
     -webkit-box-shadow: -5px -5px 5px -5px rgba(34, 60, 80, 0.6) inset;
@@ -445,6 +459,7 @@ transition: box-shadow 0.5s, transform 0.5s;
  }
 .client-image{
     border-radius:5% ;
+    max-width: 200px;
 }
 .clients-title{
     
@@ -519,8 +534,8 @@ transition: box-shadow 0.5s, transform 0.5s;
 /////////////////////////////footer//////////////////////////////////////////*/
 .footer-info{
      display: grid;
-     grid-template-columns: 20% 40% 20% 20%;
-     margin-bottom: 0.5%;
+       grid-template-columns: 20% 50% 30%;
+       margin-bottom: 0.5%;
 }
 .footer-menu-item{
     margin: 2% 2% 2% 2%;
@@ -573,7 +588,70 @@ transition: box-shadow 0.5s, transform 0.5s;
 .footer-sub:hover{
     background-color: var(--additional-color);
 }
-@media (max-width:320px){
+@media (max-width:1025px){
+ h4{
+     font-size: 1.2rem;
+ }
+}
+@media (max-width:900px){
+     .main-nav {
+         justify-content: space-between;
+         background-color: var(--additional-color);
+    }
+    .nav-burger{
+    position: relative;
+    margin-right: 10%;
+    }
+    .logo{
+     font-family: 'Pompiere', cursive;
+     font-size: 2rem;
+     margin-left: 10%;
+   } 
+   .menu-button{
+       padding: 2% 1% 2% 1%;
+   }
+   .clients-container{
+       grid-gap: 0.7rem;
+   }
+   .client-image{
+       width: 90px;
+   }
+    .carousel{
+       max-width: 290px;
+       max-height: 568px;
+   }
+   .slide{
+       padding: 10px;
+   }
+   .footer-social{
+       display: none;
+   }
+   .footer-info{
+       display: grid;
+       grid-template-columns: 20% 50% 30%;
+       margin-bottom: 0.5%;
+   }
+   .footer-menu{
+       grid-template-columns: auto;
+       justify-items: center;
+   }
+   h2{
+    font-size: 4rem;
+   }
+   .nav-burger{
+    display: block;
+   }
+   .other-nav{
+       display: none;
+   }
+   .menu-list{
+       display: none;
+   }
+   .footer-form{
+       grid-template-rows: 1fr 0.3fr 0.3fr;
+   }
+}
+@media (max-width:426px){
     .main-nav {
          justify-content: space-between;
     background-color: var(--additional-color);
@@ -599,6 +677,10 @@ transition: box-shadow 0.5s, transform 0.5s;
    }
    h4{
        font-size: 0.7rem;
+   }
+   p{
+       margin-bottom: 0;
+       font-size: 0.9rem;
    }
    .intro-link{
        height: 3rem;
@@ -628,7 +710,7 @@ transition: box-shadow 0.5s, transform 0.5s;
        height:3rem;
    }
    .carousel{
-       max-width: 320px;
+       max-width: 290px;
        max-height: 568px;
    }
    .clients-container{
@@ -642,6 +724,7 @@ transition: box-shadow 0.5s, transform 0.5s;
    }
    .form-for-customer, .contact-us{
        width: 100%;
+       padding-top: 5%;
    }
    .footer-info{
        grid-template-columns: auto;
@@ -649,6 +732,7 @@ transition: box-shadow 0.5s, transform 0.5s;
    }
    .flogo{
        text-align: center;
+       margin-bottom: 20%;
        
    }
    .footer-logo-text{
@@ -657,4 +741,11 @@ transition: box-shadow 0.5s, transform 0.5s;
    .footer-nav{
        display: none;
    }
+   .slide{
+       padding: 10px;
+   }
+   .menu-button{
+       padding: 2% 1% 2% 1%;
+   }
 }
+ 
